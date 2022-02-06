@@ -1,0 +1,26 @@
+li{
+    padding: 20px;
+    list-style: none;
+    width: 500px;
+    border-radius: 5px;
+    background-color: #141414;
+    & +li{
+        margin-top: 10px;
+    }
+    strong{
+        font-size: 25px;
+        font-weight: bold;
+    }
+    p{
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+    a{
+        text-decoration: none;
+        background-color: #6d1f1f;
+        font-size: 20px;
+        color: #fff;
+        border-radius: 5px;
+        
+    }
+}
