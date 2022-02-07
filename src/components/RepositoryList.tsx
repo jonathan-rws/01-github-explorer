@@ -1,15 +1,22 @@
-import { useEffect, useState } from "react"
+import { JSXElementConstructor, useEffect, useState } from "react"
 import {RepositoryItem} from './RepositoryItem'
 
+type Repository = {
+    id: string
+    name: string
+    description: string
+    html_url: string
+}
+
 export function RepositoryList(){
-    const [repositoryList, setRepositoryList] = useState([])
+    const [repositoryList, setRepositoryList] = useState<Repository[]>([])
 
     useEffect(()=>{
-        fetch('https://api.github.com/orgs/rocketseat/repos')
+        fetch('https://api.github.com/users/jonathan-rws/repos')
         .then(response => response.json())
         .then(data => setRepositoryList(data))
     },[])
-
+ 
    
     return(
         <section>
@@ -19,4 +26,4 @@ export function RepositoryList(){
             </ul>
         </section>
     )
-}
+} 
